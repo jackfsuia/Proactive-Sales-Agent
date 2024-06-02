@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        /* Add some basic styling */
+        #messages {
+            height: 300px;
+            border: 1px solid black;
+            padding: 10px;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div id="messages"></div>
+    <input type="text" id="message-input">
+    <button id="send-btn">Send</button>
+
+    <script>
+        $(document).ready(function() {
+            var socket = io.connect('http://' + document.domain + ':' + location.port);
+            var $messages = $('#messages'); // 缓存DOM查询结果以提高性能
+            
+            // 添加用于区分发送者和接收者的CSS类
+            var senderClass = 'me';
+            var receiverClass = 'other';
+       
+            let $currentMessagePara; // 用于存储当前显示消息的 <p> 元素引用
+
+            
+            let currentMessage = ''; // 用于累积接收的流式数据片段
+
+            socket.on('response', function(chunk) {
+
+                if (chunk.endsWith('END_OF_STREAM')){
+                    currentMessage = '';
+                }
+                else if (currentMessage == ''){
+                    $currentMessagePara = $('<p class="' + receiverClass + '">' + chunk + '</p>')
+                    $messages.append($currentMessagePara);
+                    $messages.scrollTop($messages[0].scrollHeight);
+                    currentMessage = chunk
+                }
+                else{
+                    currentMessage += chunk
+                    $currentMessagePara.text(currentMessage)
+                }
+
+      
+            });
+    
+            $('#send-btn').click(function() {
+                var msg = $('#message-input').val();
+                if (msg.trim()) {
+                    // 在发送前先在客户端显示，使用senderClass
+                    $messages.append('<p class="' + senderClass + '">' + msg + '</p>');
+                    $messages.scrollTop($messages[0].scrollHeight);
+                    
+                    socket.emit('message', msg);
+                    $('#message-input').val('');
+                }
+            });
+            
+            // 添加CSS以区分左右两侧的消息样式
+            $('head').append('<style>'
+                + '.' + senderClass + '{ text-align: left; background-color: lightblue; }'
+                + '.' + receiverClass + '{ text-align: left; background-color: lightgreen; }'
+                + '</style>');
+        });
+    </script>
+</body>
+</html>

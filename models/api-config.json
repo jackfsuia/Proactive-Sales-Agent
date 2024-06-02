@@ -1,0 +1,27 @@
+[
+    {
+        "name": "deepseek",
+        "provider": "deepseek",
+        "base_url": "https://api.deepseek.com",
+        "api_key": "sk-dnwakudukawbdwa"
+    },
+    {
+        "name": "ERNIE-Speed-8K",
+        "provider": "baidu",
+        "base_url": "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie_speed?access_token=",
+        "api_key": "dmnijouwandjkowanjdwad",
+        "secret_key": "dnajkwndjklwadwad"
+    },
+    {
+        "name": "Yi-34B-Chat",
+        "provider": "baidu",
+        "base_url": "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=",
+        "api_key": "dhaiuwhdwadwad",
+        "secret_key": "dnwajkndwadwadawd"
+    },
+    {
+        "name": "gpt-3.5-turbo",
+        "provider": "openai",
+        "api_key": "dnwaiundiawdwa"
+    }
+]
