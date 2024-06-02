@@ -13,4 +13,4 @@ Remind the LLM periodically how long it has been since last time customers spoke
 ## Results
 It needs to be improved. Now it can only do simple things like reminding you how long it's been waiting for you if you ask him to remind you in advance.
 ## Future
-- Finetune it to learn time concept.
+- Besides prompt engineering, finetune it to improve its time concept.
