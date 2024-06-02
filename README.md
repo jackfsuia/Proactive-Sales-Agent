@@ -1,16 +1,16 @@
 # Proactive-Sales-Agent
-[English](README_EN.md)
+[中文](README_ZH.md)
 
-实验性项目：为大模型销售代理引入**时间观念** ，促使它能根据时间流逝的情况和用户**主动交谈**.
+An experiment to introduce **time concept** to LLM sales agent so it feels the time flying when talking to customers, which aims to enable its natural **proactive talking**.
 
-## 使用
-把你申请的API key写入[api-config.json](models/api-config.json). 然后运行
+## Use
+Write your API key into [api-config.json](models/api-config.json). Then
 ```
 python app.py
 ```
-## 原理
-每过一段时间就提醒大模型销售现在离上次客户讲话已经过去了多久，让大模型自己决定要不要主动说些话。
-## 结果
-仍在改进中。目前只能完成简单效果，比如它会主动提醒你它已经等了你多久，假如你提前告诉它让他等你几分钟的话。
-## 未来方向
-- 微调让其掌握时间观念。
+## How it works
+Remind the LLM periodically how long it has been since last time customers spoke, then the LLM will decide whether to speak or keep silent.
+## Results
+It needs to be improved. Now it can only do simple things like reminding you how long it's been waiting for you if you ask him to remind you in advance.
+## Future
+- Finetune it to learn time concept.
