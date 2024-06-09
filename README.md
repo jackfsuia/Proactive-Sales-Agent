@@ -1,7 +1,7 @@
 # Proactive-Sales-Agent
 [中文](README_ZH.md)
 
-An experiment to introduce **time concept** to LLM sales agent so it feels the time flying when talking to customers, which aims to enable its natural **proactive talking**. It is a long project of developing a human-like sales agent, starting from [ShampooSalesAgent](https://github.com/jackfsuia/ShampooSalesAgent).
+An experiment to introduce **time concept** to LLM sales agent so it feels the time flying when talking to customers, which aims to enable its natural **proactive talking**. It is a long-term project towards developing a human-like sales agent, starting from [ShampooSalesAgent](https://github.com/jackfsuia/ShampooSalesAgent).
 
 ## Use
 Write your API key into [api-config.json](models/api-config.json). Then
