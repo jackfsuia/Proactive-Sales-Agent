@@ -3,6 +3,10 @@
 
 An experiment to introduce **time concept** to LLM sales agent so it feels the time flying when talking to customers, which aims to enable its natural **proactive talking**. It is a long-term project towards developing a human-like sales agent, starting from [ShampooSalesAgent](https://github.com/jackfsuia/ShampooSalesAgent).
 
+Demo:
+
+<p align="center"><img src="images/proactive talk.png" width="100%" ></p>
+
 ## Use
 Write your API key into [api-config.json](models/api-config.json). Then
 ```

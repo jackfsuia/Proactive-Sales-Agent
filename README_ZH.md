@@ -3,6 +3,9 @@
 
 实验性项目：为大模型销售代理引入**时间观念** ，促使它能根据时间流逝的情况和用户**主动交谈**。 作为长期项目，目标是构建和人一模一样的销售代理，项目起点是[ShampooSalesAgent](https://github.com/jackfsuia/ShampooSalesAgent)。
 
+演示:
+
+<p align="center"><img src="images/proactive talk.png" width="100%" ></p>
 
 ## 使用
 把你申请的API key写入[api-config.json](models/api-config.json). 然后运行
